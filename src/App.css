@@ -1,0 +1,159 @@
+/* App.css */
+:root {
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --secondary-gray: #6b7280;
+  --light-gray: #f3f4f6;
+  --dark-gray: #374151;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-radius: 0.75rem;
+  --transition: all 0.3s ease;
+  --header-height: 4rem; /* Define la altura del header */
+}
+
+/* Modo oscuro */
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-second: #8595af;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --button-close: #154254;
+}
+
+
+/* Modo claro (por defecto) */
+.light {
+  --bg-primary: #f9fafb;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3f4f6;
+  --bg-second: #8595af;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+   --button-close: #154254;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Prevenir scroll horizontal */
+  width: 100%;
+}
+
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: var(--transition);
+ /*  overflow-x: hidden; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Asegurar que no haya espacio extra */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* Utilidades */
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* App.css - Agregar al final */
+/* Ajustes para el menú móvil */
+
+
+/* Asegurar que el contenido no se mueva cuando aparece el scrollbar */
+
+/* Corrección para evitar espacio a la derecha */
+.main-content {
+ /*  padding-top: var(--header-height); */ /* Espacio para el header fijo */
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Personalización de Toastify */
+.Toastify__toast {
+  border-radius: 0.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.Toastify__toast--success {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.Toastify__toast--error {
+  background-color: #ef4444;
+  color: var(--white);
+}
+
+.Toastify__toast-body {
+  font-size: 0.875rem;
+  padding: 0.5rem;
+}
+
+.Toastify__close-button {
+  align-self: center;
+}
+
+/* Estilos para modo oscuro */
+.dark .Toastify__toast--success {
+  background-color: var(--primary-blue);
+}
+
+.dark .Toastify__toast--error {
+  background-color: #ef4444;
+}

@@ -1,0 +1,233 @@
+/* components/Header.css */
+.header {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow);
+  position: fixed; /* Mantener fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 50;
+  transition: var(--transition);
+  height: var(--header-height);
+}
+
+/* Asegurar que el header no cause scroll horizontal */
+.header .container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100%;
+}
+
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  height: 100%;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: var(--transition);
+}
+
+.menu-toggle:hover {
+  background-color: var(--bg-tertiary);
+}
+
+/* Menú escritorio - oculto en móviles */
+.nav-menu-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+   .header .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  
+  .nav-menu-desktop {
+    display: block;
+  }
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+  border-radius: 0.25rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+  background-color: var(--bg-tertiary);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .header-controls {
+    display: none;
+  }
+}
+
+.language-selector {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--text-tertiary);
+}
+
+.theme-toggle-desktop {
+  padding: 0.5rem;
+  border-radius: 50%;
+/*   background-color: var(--bg-second); */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .theme-toggle-desktop {
+    display: block;
+  }
+}
+
+.theme-icon {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* Menú móvil desplegable */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+}
+
+.mobile-menu {
+  background-color: var(--bg-secondary);
+  width: 280px;
+  height: 100%;
+  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: var(--transition);
+}
+
+.mobile-menu-close:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.mobile-nav-link:hover {
+  color: var(--primary-blue);
+  background-color: var(--bg-tertiary);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .header-controls {
+    display: flex;
+  }
+}

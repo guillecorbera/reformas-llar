@@ -1,0 +1,54 @@
+/* components/Hero.css */
+.hero-section {
+  position: relative;
+ /*  top: 144px;  */
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1e40af 100%);
+  color: var(--white);
+  padding: 5rem 0;
+  text-align: center;
+  margin-top: var(--header-height); 
+}
+
+.hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: var(--transition);
+  transform: scale(1);
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}

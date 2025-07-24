@@ -1,0 +1,67 @@
+/* components/Reviews.css */
+.reviews-section {
+  padding: 5rem 0;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.8s ease-in-out;
+  transform: scale(1);
+}
+
+.review-card:hover{
+  transform: scale(1.08);
+  transition: transform 0.8s ease-in-out;
+}
+
+
+
+.star-rating {
+  margin-bottom: 1rem;
+}
+
+.star-filled {
+  color: #fbbf24;
+  margin-right: 0.25rem;
+}
+
+.star-empty {
+  color: var(--text-tertiary);
+  margin-right: 0.25rem;
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.review-author {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 3rem 0;
+  }
+  
+  .reviews-grid {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .review-card {
+    padding: 1.5rem;
+  }
+}

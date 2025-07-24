@@ -1,0 +1,93 @@
+/* components/Gallery.css */
+.gallery-section {
+  background-color: var(--bg-tertiary);
+  padding: 5rem 0;
+  margin-top: var(--header-height);
+}
+
+.gallery-masonry {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .gallery-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-masonry {
+    column-count: 3;
+  }
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+
+.gallery-content {
+  padding: 1.5rem;
+}
+
+.gallery-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-description {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.gallery-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gallery-button:hover {
+  background-color: var(--primary-blue-hover);
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 3rem 0;
+  }
+  
+  .gallery-masonry {
+    column-gap: 1rem;
+  }
+  
+  .gallery-item {
+    margin-bottom: 1rem;
+  }
+  
+  .gallery-content {
+    padding: 1rem;
+  }
+}
