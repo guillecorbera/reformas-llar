@@ -99,6 +99,29 @@ const Header = ({ language, setLanguage, darkMode, setDarkMode, t }) => {
                   </a>
                 </li>
               ))}
+              {/* Controles en el menú móvil */}
+              <li className="mobile-nav-item mobile-controls">
+                <select 
+                  value={language} 
+                  onChange={(e) => setLanguage(e.target.value)}
+                  className="language-selector-mobile"
+                >
+                  <option value="es">ESP</option>
+                  <option value="ca">CAT</option>
+                </select>
+                <button 
+                  onClick={() => {
+                    setDarkMode(!darkMode);
+                    setIsMenuOpen(false); // Opcional: cerrar menú al cambiar tema
+                  }}
+                  className="theme-toggle-mobile"
+                >
+                  {darkMode ? <FaSun className="theme-icon" /> : <FaMoon className="theme-icon" />}
+                  <span className="theme-text">
+                    {darkMode ? 'Modo Claro' : 'Modo Oscuro'}
+                  </span>
+                </button>
+              </li>
             </ul>
           </div>
         </div>

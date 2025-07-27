@@ -67,6 +67,7 @@
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   transition: var(--transition);
+  resize: none;
 }
 
 .form-input:focus {

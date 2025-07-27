@@ -145,69 +145,107 @@ const App = () => {
 
   const t = translations[language];
 
-  const galleryWorks = [
-    {
-      id: 1,
-      title: "Reforma Integral Piso Centro",
-      description: "Reforma completa de un piso de 85m² en el centro de Barcelona. Incluyó cambio de distribución, instalaciones nuevas y acabados de alta calidad.",
-      images: [
-        "https://placehold.co/600x400/4a90e2/ffffff?text=Cocina+Moderna",
-        "https://placehold.co/600x800/50c878/ffffff?text=Salón+Elegante",
-        "https://placehold.co/600x400/ff6b6b/ffffff?text=Baño+Contemporáneo",
-        "https://placehold.co/600x500/ffd93d/ffffff?text=Dormitorio+Principal"
-      ]
+ // En App.jsx, reemplaza tu galleryWorks actual con este:
+// App.jsx (fragmento corregido)
+const galleryWorks = [
+  {
+    id: 1,
+    title: {
+      es: "Reforma Integral Piso Centro",
+      ca: "Reforma Integral Pis Centre"
     },
-    {
-      id: 2,
-      title: "Renovación Cocina Vintage",
-      description: "Transformación de cocina clásica a diseño moderno con isla central y electrodomésticos integrados.",
-      images: [
-        "https://placehold.co/600x400/6b5b95/ffffff?text=Cocina+Vintage+1",
-        "https://placehold.co/600x500/88b719/ffffff?text=Cocina+Vintage+2",
-        "https://placehold.co/600x450/fb8b24/ffffff?text=Cocina+Vintage+3"
-      ]
+    description: {
+      es: "Reforma completa de un piso de 85m² en el centro de Barcelona. Incluyó cambio de distribución, instalaciones nuevas y acabados de alta calidad.",
+      ca: "Reforma completa d'un pis de 85m² al centre de Barcelona. Va incloure canvi de distribució, instal·lacions noves i acabats d'alta qualitat."
     },
-    {
-      id: 3,
-      title: "Baño Moderno Minimalista",
-      description: "Diseño minimalista con materiales naturales y sistema de iluminación LED ambiental.",
-      images: [
-        "https://placehold.co/600x800/a31621/ffffff?text=Baño+Minimalista+1",
-        "https://placehold.co/600x400/0077b6/ffffff?text=Baño+Minimalista+2",
-        "https://placehold.co/600x500/52de97/ffffff?text=Baño+Minimalista+3"
-      ]
+    images: [
+      "https://placehold.co/600x400/4a90e2/ffffff?text=Cocina+Moderna",
+      "https://placehold.co/600x800/50c878/ffffff?text=Salón+Elegante",
+      "https://placehold.co/600x400/ff6b6b/ffffff?text=Baño+Contemporáneo",
+      "https://placehold.co/600x500/ffd93d/ffffff?text=Dormitorio+Principal"
+    ]
+  },
+  {
+    id: 2,
+    title: {
+      es: "Renovación Cocina Vintage",
+      ca: "Renovació Cuina Vintage"
     },
-    {
-      id: 4,
-      title: "Reforma Oficina en Casa",
-      description: "Creación de espacio de trabajo en casa con mobiliario a medida y sistema de almacenamiento integrado.",
-      images: [
-        "https://placehold.co/600x400/ff7f50/ffffff?text=Oficina+Casa+1",
-        "https://placehold.co/600x500/4682b4/ffffff?text=Oficina+Casa+2",
-        "https://placehold.co/600x450/32cd32/ffffff?text=Oficina+Casa+3"
-      ]
+    description: {
+      es: "Transformación de cocina clásica a diseño moderno con isla central y electrodomésticos integrados.",
+      ca: "Transformació de cuina clàssica a disseny modern amb illa central i electrodomèstics integrats."
     },
-    {
-      id: 5,
-      title: "Terraza con Jardín Vertical",
-      description: "Transformación de terraza con jardín vertical, mobiliario exterior y sistema de riego automatizado.",
-      images: [
-        "https://placehold.co/600x400/20b2aa/ffffff?text=Terraza+Jardín+1",
-        "https://placehold.co/600x500/da70d6/ffffff?text=Terraza+Jardín+2",
-        "https://placehold.co/600x450/ff4500/ffffff?text=Terraza+Jardín+3"
-      ]
+    images: [
+      "https://placehold.co/600x400/6b5b95/ffffff?text=Cocina+Vintage+1",
+      "https://placehold.co/600x500/88b719/ffffff?text=Cocina+Vintage+2",
+      "https://placehold.co/600x450/fb8b24/ffffff?text=Cocina+Vintage+3"
+    ]
+  },
+  {
+    id: 3,
+    title: {
+      es: "Baño Moderno Minimalista",
+      ca: "Bany Modern Minimalista"
     },
-    {
-      id: 6,
-      title: "Dormitorio Principal con Vestidor",
-      description: "Diseño de dormitorio principal con vestidor integrado y baño en suite con acabados de lujo.",
-      images: [
-        "https://placehold.co/600x400/4169e1/ffffff?text=Dormitorio+Vestidor+1",
-        "https://placehold.co/600x500/ff1493/ffffff?text=Dormitorio+Vestidor+2",
-        "https://placehold.co/600x450/3cb371/ffffff?text=Dormitorio+Vestidor+3"
-      ]
-    }
-  ];
+    description: {
+      es: "Diseño minimalista con materiales naturales y sistema de iluminación LED ambiental.",
+      ca: "Disseny minimalista amb materials naturals i sistema d'il·luminació LED ambiental."
+    },
+    images: [
+      "https://placehold.co/600x800/a31621/ffffff?text=Baño+Minimalista+1",
+      "https://placehold.co/600x400/0077b6/ffffff?text=Baño+Minimalista+2",
+      "https://placehold.co/600x500/52de97/ffffff?text=Baño+Minimalista+3"
+    ]
+  },
+  {
+    id: 4,
+    title: {
+      es: "Reforma Oficina en Casa",
+      ca: "Reforma Oficina a Casa"
+    },
+    description: {
+      es: "Creación de espacio de trabajo en casa con mobiliario a medida y sistema de almacenamiento integrado.",
+      ca: "Creació d'espai de treball a casa amb mobiliari a mida i sistema d'emmagatzematge integrat."
+    },
+    images: [
+      "https://placehold.co/600x400/ff7f50/ffffff?text=Oficina+Casa+1",
+      "https://placehold.co/600x500/4682b4/ffffff?text=Oficina+Casa+2",
+      "https://placehold.co/600x450/32cd32/ffffff?text=Oficina+Casa+3"
+    ]
+  },
+  {
+    id: 5,
+    title: {
+      es: "Terraza con Jardín Vertical",
+      ca: "Terrassa amb Jardí Vertical"
+    },
+    description: {
+      es: "Transformación de terraza con jardín vertical, mobiliario exterior y sistema de riego automatizado.",
+      ca: "Transformació de terrassa amb jardí vertical, mobiliari exterior i sistema de reg automatzat."
+    },
+    images: [
+      "https://placehold.co/600x400/20b2aa/ffffff?text=Terraza+Jardín+1",
+      "https://placehold.co/600x500/da70d6/ffffff?text=Terraza+Jardín+2",
+      "https://placehold.co/600x450/ff4500/ffffff?text=Terraza+Jardín+3"
+    ]
+  },
+  {
+    id: 6,
+    title: {
+      es: "Dormitorio Principal con Vestidor",
+      ca: "Dormitori Principal amb Vestidor"
+    },
+    description: {
+      es: "Diseño de dormitorio principal con vestidor integrado y baño en suite con acabados de lujo.",
+      ca: "Disseny de dormitori principal amb vestidor integrat i bany en suite amb acabats de luxe."
+    },
+    images: [
+      "https://placehold.co/600x400/4169e1/ffffff?text=Dormitorio+Vestidor+1",
+      "https://placehold.co/600x500/ff1493/ffffff?text=Dormitorio+Vestidor+2",
+      "https://placehold.co/600x450/3cb371/ffffff?text=Dormitorio+Vestidor+3"
+    ]
+  }
+];
 
   const openWorkModal = (work, index) => {
     setSelectedWork(work);
@@ -244,22 +282,24 @@ const App = () => {
       <main className="main-content">
         <Hero t={t} />
         <Services t={t} />
-        <Gallery t={t} galleryWorks={galleryWorks} openWorkModal={openWorkModal} />
+        // En App.jsx, donde llamas al componente Gallery
+        <Gallery t={t} galleryWorks={galleryWorks} openWorkModal={openWorkModal} language={language} />
         <Reviews t={t} />
         <Contact t={t} language={language} />
       </main>
       
       <Footer t={t} language={language} />
       
-      <WorkModal 
-        selectedWork={selectedWork}
-        currentImageIndex={currentImageIndex}
-        closeWorkModal={closeWorkModal}
-        prevImage={prevImage}
-        nextImage={nextImage}
-        setCurrentImageIndex={setCurrentImageIndex}
-
-      />
+// En App.jsx, donde llamas al componente WorkModal
+<WorkModal 
+  selectedWork={selectedWork}
+  currentImageIndex={currentImageIndex}
+  closeWorkModal={closeWorkModal}
+  prevImage={prevImage}
+  nextImage={nextImage}
+  setCurrentImageIndex={setCurrentImageIndex}
+  language={language}
+/>
       <ToastContainer/>
     </div>
   );

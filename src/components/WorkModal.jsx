@@ -2,8 +2,14 @@
 import React from 'react';
 import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 
-const WorkModal = ({ selectedWork, currentImageIndex, closeWorkModal, prevImage, nextImage, setCurrentImageIndex }) => {
+const WorkModal = ({ selectedWork, currentImageIndex, closeWorkModal, prevImage, nextImage, setCurrentImageIndex, language }) => {
+  // Asegurarse de que haya un trabajo seleccionado
   if (!selectedWork) return null;
+
+  // Obtener el título y descripción en el idioma correcto
+  // Si no existe la traducción para ese idioma, usa español por defecto como fallback
+  const title = selectedWork.title[language] || selectedWork.title.es || selectedWork.title;
+  const description = selectedWork.description[language] || selectedWork.description.es || selectedWork.description;
 
   const handleRequestQuote = () => {
     // Cerrar el modal
@@ -46,7 +52,7 @@ const WorkModal = ({ selectedWork, currentImageIndex, closeWorkModal, prevImage,
             
             <img 
               src={selectedWork.images[currentImageIndex]} 
-              alt={selectedWork.title}
+              alt={title}
               className="slider-image"
             />
             
@@ -69,18 +75,28 @@ const WorkModal = ({ selectedWork, currentImageIndex, closeWorkModal, prevImage,
           </div>
           
           <div className="modal-details">
-            <h3 className="modal-title">{selectedWork.title}</h3>
+            <h3 className="modal-title">{title}</h3>
             <p className="modal-description">
-              {selectedWork.description}
+              {description}
             </p>
             
             <div className="modal-details-section">
-              <h4 className="modal-subtitle">Detalles del proyecto:</h4>
+              <h4 className="modal-subtitle">
+                {language === 'ca' ? 'Detalls del projecte:' : 'Detalles del proyecto:'}
+              </h4>
               <ul className="modal-details-list">
-                <li className="modal-detail-item">• Duración: 4-6 semanas</li>
-                <li className="modal-detail-item">• Superficie: {Math.floor(Math.random() * 100) + 50} m²</li>
-                <li className="modal-detail-item">• Materiales: Alta calidad y sostenibles</li>
-                <li className="modal-detail-item">• Garantía: 2 años</li>
+                <li className="modal-detail-item">
+                  {language === 'ca' ? '• Durada: 4-6 setmanes' : '• Duración: 4-6 semanas'}
+                </li>
+                <li className="modal-detail-item">
+                  {language === 'ca' ? `• Superfície: ${Math.floor(Math.random() * 100) + 50} m²` : `• Superficie: ${Math.floor(Math.random() * 100) + 50} m²`}
+                </li>
+                <li className="modal-detail-item">
+                  {language === 'ca' ? '• Materials: Alta qualitat i sostenibles' : '• Materiales: Alta calidad y sostenibles'}
+                </li>
+                <li className="modal-detail-item">
+                  {language === 'ca' ? '• Garantia: 2 anys' : '• Garantía: 2 años'}
+                </li>
               </ul>
             </div>
             
@@ -88,7 +104,7 @@ const WorkModal = ({ selectedWork, currentImageIndex, closeWorkModal, prevImage,
               className="btn btn-primary"
               onClick={handleRequestQuote}
             >
-              Solicitar Presupuesto
+              {language === 'ca' ? 'Sol·licitar Pressupost' : 'Solicitar Presupuesto'}
             </button>
           </div>
         </div>

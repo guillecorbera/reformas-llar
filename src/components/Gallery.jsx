@@ -1,7 +1,12 @@
 // components/Gallery.jsx
 import React from 'react';
 
-const Gallery = ({ t, galleryWorks, openWorkModal }) => {
+const Gallery = ({ t, galleryWorks, openWorkModal, language }) => {
+  // Función para obtener el texto traducido
+  const getTranslatedText = (textObject) => {
+    return textObject[language] || textObject.es || textObject;
+  };
+
   return (
     <section id="gallery" className="gallery-section">
       <div className="container">
@@ -11,14 +16,14 @@ const Gallery = ({ t, galleryWorks, openWorkModal }) => {
             <div key={work.id} className="gallery-item">
               <img 
                 src={work.images[0]} 
-                alt={work.title} 
+                alt={getTranslatedText(work.title)} 
                 className="gallery-image"
                 onClick={() => openWorkModal(work, 0)}
               />
               <div className="gallery-content">
-                <h3 className="gallery-title">{work.title}</h3>
+                <h3 className="gallery-title">{getTranslatedText(work.title)}</h3>
                 <p className="gallery-description">
-                  {work.description.substring(0, 100)}...
+                  {getTranslatedText(work.description).substring(0, 100)}...
                 </p>
                 <button 
                   onClick={() => openWorkModal(work, 0)}

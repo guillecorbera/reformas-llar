@@ -24,7 +24,7 @@ const Contact = ({ t, language }) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mjkowbgz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ const Contact = ({ t, language }) => {
             : 'Missatge enviat correctament! Ens posarem en contacte aviat.',
           {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
